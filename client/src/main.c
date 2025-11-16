@@ -903,7 +903,7 @@ void spiceReady(void)
   if (uuidValid)
   {
     memcpy(g_state.spiceUUID, info.uuid, sizeof(g_state.spiceUUID));
-    checkUUID();
+    // checkUUID();
   }
   purespice_freeServerInfo(&info);
 
@@ -1726,7 +1726,7 @@ restart:
     udataSize -= record->size;
   }
 
-  checkUUID();
+  // checkUUID();
 
   if (g_state.state == APP_STATE_RUNNING)
   {
