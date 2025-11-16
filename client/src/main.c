@@ -860,24 +860,24 @@ int main_frameThread(void * unused)
   return 0;
 }
 
-static void checkUUID(void)
-{
-  if (!g_state.spiceReady || !g_state.guestUUIDValid)
-    return;
-
-  if (memcmp(g_state.spiceUUID, g_state.guestUUID,
-        sizeof(g_state.spiceUUID)) == 0)
-    return;
-
-  app_msgBox(
-      "SPICE Configuration Error",
-      "You have connected SPICE to the wrong guest.\n"
-      "Input will not function until this is corrected.");
-
-  g_params.useSpiceInput = false;
-  g_state.spiceClose = true;
-  purespice_disconnect();
-}
+// static void checkUUID(void)
+// {
+//   if (!g_state.spiceReady || !g_state.guestUUIDValid)
+//     return;
+//
+//   if (memcmp(g_state.spiceUUID, g_state.guestUUID,
+//         sizeof(g_state.spiceUUID)) == 0)
+//     return;
+//
+//   app_msgBox(
+//       "SPICE Configuration Error",
+//       "You have connected SPICE to the wrong guest.\n"
+//       "Input will not function until this is corrected.");
+//
+//   g_params.useSpiceInput = false;
+//   g_state.spiceClose = true;
+//   purespice_disconnect();
+// }
 
 void spiceReady(void)
 {
